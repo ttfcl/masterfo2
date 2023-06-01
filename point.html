@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>관리자페이지</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    if(localStorage.getItem('master') !== 'pass') {
+      location.href = 'index.html'
+    } 
+  </script>
+</head>
+<body>
+  <div class="section1">
+    <div class="주의사항" style="margin-bottom: 50px;">사용방법</br>1. 이메일에서 접수된 신청서를 확인합니다.</br>2. 계좌에 ★정확한 금액이★ 입금됐는지 확인합니다.</br>3. 신청서의 이메일을 입력하면 정보가 조회됩니다.</br>4. 포인트의 지급, 차감한 금액을 입력하고 변경을 누릅니다.</br>5. 이름과 입금자명이 다를 경우 이메일을 기준으로 지급합니다.</br>6. 완료 메시지가 나오면 성공입니다.</div>
+    
+    <div class="buttonBox" style="margin-bottom: 50px;">
+      <div onclick="location.href='change.html'">카톡텔레계좌변경</div>
+      <div onclick="location.href='point.html'" style="background-color: lightsteelblue;">포인트관리</div>
+    </div>
+    <div class="be">이메일로 회원 정보 조회하기</div>
+    <input type="text" placeholder="신청서의 이메일을 입력하세요" class="af" id="finder">
+    <button id="finderButton">조회하기</button>
+    <div class="be">이메일 : <span id="email"></span></div>
+    <div class="be">이름 : <span id="name"></span></div>
+    <div class="be">포인트 : <span id="point"></span></div>
+    <div class="be" style="margin-top: 20px;">현재 포인트 '<span id="point2"></span>'를 아래 금액으로 변경합니다.</div>
+    <input type="text" placeholder="변경할 포인트를 입력하세요." class="af" id="finder2">
+    <button id="changeButton">변경하기</button>
+    <button id="logout">로그아웃</button>
+    
+  </div>  
+
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-app.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-auth.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-firestore.js"></script>
+	<script src="https://www.gstatic.com/firebasejs/8.6.5/firebase-storage.js"></script>
+  <script src="point.js"></script>
+</body>
+</html>
