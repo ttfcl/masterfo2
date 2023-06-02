@@ -5,7 +5,11 @@ let name2 =  document.querySelector('#name')
 let point =  document.querySelector('#point')
 let point2 =  document.querySelector('#point2')
 let finder2 =  document.querySelector('#finder2')
+let finder3 =  document.querySelector('#finder3')
+let finder4 =  document.querySelector('#finder4')
 let changeButton =  document.querySelector('#changeButton')
+let plusButton =  document.querySelector('#plusButton')
+let minusButton =  document.querySelector('#minusButton')
 let a1, a2 , a3, a4, a5, a6 ,a7 ,a8
 let masterkey = 0
 
@@ -33,6 +37,18 @@ var firebaseConfig = {
   }
   changeButton.onclick = () => {
     db.collection('user').doc(email.textContent).update({ 'grade' : finder2.value}).then(() => {
+        alert('변경이 완료되었습니다.')
+        location.reload()
+    })
+  }
+  plusButton.onclick = () => {
+    db.collection('user').doc(email.textContent).update({ 'grade' : Number(document.querySelector("#point2").textContent.replaceAll(',', '')) + Number(finder3.value)}).then(() => {
+        alert('지급이 완료되었습니다.')
+        location.reload()
+    })
+  }
+  minusButton.onclick = () => {
+    db.collection('user').doc(email.textContent).update({ 'grade' : Number(document.querySelector("#point2").textContent.replaceAll(',', '')) - Number(finder4.value)}).then(() => {
         alert('변경이 완료되었습니다.')
         location.reload()
     })
