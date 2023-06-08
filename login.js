@@ -3,7 +3,7 @@ let pw = document.querySelector("#pw")
 let login = document.querySelector("#login")
 
 login.onclick = () => {
-    if(id.value === 'admin' && pw.value === 'qweasdzxc123') {
+    if(id.value === 'admin' && pw.value === '3825asdf!!') {
         localStorage.setItem('master', 'pass')
         alert("관리자 모드에 오신 것을 환영합니다.")
         location.href="change.html"
